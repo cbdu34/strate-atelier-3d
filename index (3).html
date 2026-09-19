@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRATE - Atelier Impression 3D | Demande de Devis & Tarifs</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1e252b',
+                            card: '#283138',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                            golddark: '#aa820a',
+                            bg: '#eae6df',
+                            bgcard: '#f4f1ea',
+                            accent: '#313c46'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        brand: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #eae6df;
+            color: #1e252b;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-cursive {
+            font-family: 'Playfair Display', cursive, serif;
+        }
+        .border-gold {
+            border-color: #d4af37;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #eae6df;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #283138;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-brand-dark text-white sticky top-0 z-40 shadow-xl border-b-2 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+            <!-- Logo Section -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-lg border-2 border-brand-gold bg-brand-card flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-200">
+                    <svg class="w-7 h-7 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-2xl font-brand tracking-wider text-white font-bold block leading-none">STRATE</span>
+                    <span class="text-[10px] uppercase tracking-widest text-brand-gold font-medium">Atelier Impression 3D</span>
+                </div>
+            </a>
+
+            <!-- Navigation Items -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#deroulement" class="hover:text-brand-gold transition-colors">Déroulement</a>
+                <a href="#demander-devis" class="hover:text-brand-gold transition-colors">Comment Demander un Devis</a>
+                <a href="#services" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="#tarifs" class="hover:text-brand-gold transition-colors">Grille Tarifaire</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="flex items-center space-x-3">
+                <a href="#demander-devis" class="bg-gradient-to-r from-brand-gold to-brand-golddark text-brand-dark font-bold px-4 py-2 rounded-lg text-sm shadow-md hover:brightness-110 active:scale-95 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>Demander un Devis</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN HERO SECTION -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <!-- Hero Welcome Banner -->
+        <div class="bg-brand-dark text-white rounded-3xl p-6 sm:p-10 shadow-2xl border-2 border-brand-gold/50 relative overflow-hidden">
+            <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="max-w-3xl space-y-4">
+                <span class="inline-flex items-center gap-2 bg-brand-gold/10 text-brand-gold border border-brand-gold/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-cube"></i> Fabrication Additive & Modélisation CAO
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    Vos pièces et projets 3D sur-mesure, <span class="text-brand-gold font-cursive italic font-normal">simplement.</span>
+                </h1>
+                <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+                    Impression FDM haute précision (PLA / PETG) ou conception complète d'après vos photos et mesures. Transmettez-nous votre besoin pour recevoir votre devis sous 24h avec paiement sécurisé Leboncoin.
+                </p>
+
+                <!-- Key benefits bar -->
+                <div class="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-medium border-t border-white/10">
+                    <div class="flex items-center gap-2 text-brand-goldlight">
+                        <i class="fa-solid fa-bolt text-brand-gold"></i>
+                        <span>Devis gratuit sous 24h</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-brand-goldlight">
+                        <i class="fa-solid fa-tags text-brand-gold"></i>
+                        <span>Prix dégressif au poids</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-brand-goldlight">
+                        <i class="fa-solid fa-shield-halved text-brand-gold"></i>
+                        <span>Paiement sécurisé LBC</span>
+                    </div>
+                </div>
+
+                <div class="pt-2 flex flex-wrap gap-4">
+                    <a href="#demander-devis" class="bg-gradient-to-r from-brand-gold to-brand-golddark text-brand-dark font-extrabold px-6 py-3 rounded-xl shadow-lg hover:brightness-110 transition-all flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Comment envoyer votre demande</span>
+                    </a>
+                    <a href="#tarifs" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl border border-white/20 transition-all text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>Voir les tarifs & formule</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 1: COMMENT ÇA SE PASSE (DÉROULEMENT) -->
+        <div id="deroulement" class="bg-brand-bgcard rounded-2xl p-6 sm:p-8 shadow-md border border-brand-dark/10">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-xs font-bold tracking-widest text-brand-golddark uppercase bg-brand-gold/10 px-3 py-1 rounded-full border border-brand-gold/30">Processus Clair</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark mt-2">Comment se passe une commande ?</h2>
+                <p class="text-xs sm:text-sm text-gray-600 mt-1">4 étapes simples de la prise de contact à la réception de votre pièce</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-brand-dark/10 shadow-sm relative hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-brand-dark text-brand-gold flex items-center justify-center font-bold text-lg mb-4 shadow">1</div>
+                        <h3 class="font-bold text-base text-brand-dark mb-2">1. Envoi de votre demande</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Envoyez un e-mail à <strong class="text-brand-dark">boitardclement28@gmail.com</strong> avec vos fichiers 3D (.STL / .3MF), des photos avec mesures, ou des explications de l'objet à modéliser.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-semibold text-brand-golddark flex items-center gap-1">
+                        <i class="fa-solid fa-paperclip"></i> Fichiers / Photos / Détails
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-brand-dark/10 shadow-sm relative hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-brand-dark text-brand-gold flex items-center justify-center font-bold text-lg mb-4 shadow">2</div>
+                        <h3 class="font-bold text-base text-brand-dark mb-2">2. Devis calculé sous 24h</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Nous analysons le projet, calculons la matière avec le **tarif dégressif** au poids ainsi que le temps d'impression, puis nous vous renvoyons un devis exact.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-semibold text-brand-golddark flex items-center gap-1">
+                        <i class="fa-solid fa-calculator"></i> Calcul transparent
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-brand-dark/10 shadow-sm relative hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-brand-dark text-brand-gold flex items-center justify-center font-bold text-lg mb-4 shadow">3</div>
+                        <h3 class="font-bold text-base text-brand-dark mb-2">3. Annonce sur Leboncoin</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Dès validation du devis, nous créons une annonce personnalisée et sécurisée sur **Leboncoin** pour effectuer votre règlement en toute confiance.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-semibold text-brand-golddark flex items-center gap-1">
+                        <i class="fa-solid fa-lock"></i> Transaction sécurisée LBC
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-brand-dark/10 shadow-sm relative hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-brand-dark text-brand-gold flex items-center justify-center font-bold text-lg mb-4 shadow">4</div>
+                        <h3 class="font-bold text-base text-brand-dark mb-2">4. Impression & Expédition</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Fabrication méticuleuse, contrôle qualité, ébavurage puis expédition rapide sous 24h à 48h dans un colis renforcé anti-chocs.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-semibold text-brand-golddark flex items-center gap-1">
+                        <i class="fa-solid fa-truck-fast"></i> Envoi Mondial Relay / Colissimo
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: COMMENT DEMANDER UN DEVIS (ENVOI EMAIL DÉTAILLÉ) -->
+        <div id="demander-devis" class="bg-gradient-to-br from-brand-dark to-brand-card text-white rounded-3xl p-6 sm:p-10 shadow-2xl border-2 border-brand-gold relative overflow-hidden">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <span class="text-xs font-bold tracking-widest text-brand-gold uppercase bg-brand-gold/10 px-3.5 py-1.5 rounded-full border border-brand-gold/30">
+                    <i class="fa-solid fa-paper-plane mr-1.5"></i> Modalités d'envoi
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-bold mt-3 text-white">Comment faire pour demander un devis ?</h2>
+                <p class="text-xs sm:text-sm text-gray-300 mt-2 leading-relaxed">
+                    Pour obtenir une estimation exacte, envoyez-nous votre e-mail directement à l'adresse ci-dessous avec les pièces requises selon votre situation :
+                </p>
+                
+                <!-- Email Copy & Link Box -->
+                <div class="mt-5 inline-flex items-center justify-center gap-3 bg-black/60 border-2 border-brand-gold p-3 sm:px-6 sm:py-3 rounded-2xl text-brand-gold font-mono font-bold text-sm sm:text-xl shadow-inner flex-wrap">
+                    <i class="fa-solid fa-envelope text-brand-gold"></i>
+                    <span id="emailValue" class="select-all">boitardclement28@gmail.com</span>
+                    <div class="flex items-center gap-2">
+                        <button onclick="copyEmailAddress()" class="bg-brand-gold text-brand-dark px-3 py-1.5 rounded-xl text-xs font-extrabold hover:brightness-110 active:scale-95 transition-all flex items-center gap-1.5 font-sans">
+                            <i class="fa-solid fa-copy" id="copyBtnIcon"></i>
+                            <span id="copyBtnText">Copier l'e-mail</span>
+                        </button>
+                        <a href="mailto:boitardclement28@gmail.com?subject=Demande%20de%20devis%20Impression%203D" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors flex items-center gap-1.5 font-sans">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir Mail
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Cases depending on user's project -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Case 1: STL File ready -->
+                <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-brand-gold/60 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold text-brand-dark flex items-center justify-center font-bold text-xl mb-4 shadow">
+                            <i class="fa-solid fa-file-code"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-brand-gold mb-2">Option 1 : Vous avez déjà un fichier 3D</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                            Si vous disposez d'un fichier prêt à imprimer, joignez simplement :
+                        </p>
+                        <ul class="text-xs text-gray-200 space-y-2 font-mono bg-black/40 p-3 rounded-xl border border-white/10">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Votre fichier <strong>.STL</strong> ou <strong>.3MF</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Le <strong>matériau</strong> (PLA / PETG)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> La <strong>couleur</strong> souhaitée</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 text-[11px] text-brand-goldlight font-semibold">
+                        💡 Tarif modélisation : 0.00 € (Inclus)
+                    </div>
+                </div>
+
+                <!-- Case 2: Photos + Measurements -->
+                <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-brand-gold/60 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold text-brand-dark flex items-center justify-center font-bold text-xl mb-4 shadow">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-brand-gold mb-2">Option 2 : Pièce à reproduire / Photos & Mesures</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                            Pour reproduire une pièce cassée ou existante, envoyez-nous :
+                        </p>
+                        <ul class="text-xs text-gray-200 space-y-2 font-mono bg-black/40 p-3 rounded-xl border border-white/10">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Des <strong>photos claires</strong> sous tous les angles</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Les <strong>dimensions / cotes</strong> (en mm)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Le <strong>matériau</strong> & la <strong>couleur</strong></li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 text-[11px] text-brand-goldlight font-semibold">
+                        📐 Modélisation sur-mesure d'après vos cotes
+                    </div>
+                </div>
+
+                <!-- Case 3: Explanations / Custom Project -->
+                <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-brand-gold/60 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold text-brand-dark flex items-center justify-center font-bold text-xl mb-4 shadow">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-brand-gold mb-2">Option 3 : Création / Objet sur-mesure</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                            Pour concevoir une pièce à partir d'une idée ou d'un projet :
+                        </p>
+                        <ul class="text-xs text-gray-200 space-y-2 font-mono bg-black/40 p-3 rounded-xl border border-white/10">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Des <strong>explications très détaillées</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> La description de <strong>l'objet à modéliser</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Le <strong>matériau</strong> & la <strong>couleur</strong></li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 text-[11px] text-brand-goldlight font-semibold">
+                        🛠️ Conception CAO de A à Z
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stock colors & important reminder box -->
+            <div class="mt-8 bg-brand-card/90 p-5 rounded-2xl border border-brand-gold/40 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-3 bg-brand-gold/20 rounded-xl text-brand-gold text-xl">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase font-bold text-brand-gold tracking-wider">Pensez à préciser le matériau et la couleur dans votre e-mail !</h4>
+                        <p class="text-xs text-gray-300 mt-0.5">
+                            <strong>PLA :</strong> Blanc, Vert | <strong>PETG :</strong> Blanc, Noir
+                        </p>
+                    </div>
+                </div>
+                <div class="text-xs text-gray-300 bg-black/40 px-4 py-2 rounded-xl border border-white/10 text-center md:text-right font-mono">
+                    Direct à : <span class="text-brand-gold font-bold">boitardclement28@gmail.com</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: SERVICES PROPOSÉS -->
+        <div id="services" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Left Column: Presentation Card -->
+            <div class="lg:col-span-5 bg-brand-dark text-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-brand-gold/30 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold text-brand-gold uppercase tracking-widest bg-brand-gold/10 px-3 py-1 rounded-full border border-brand-gold/30">Atelier STRATE</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold mt-3">Nos Prestations d'Impression 3D</h2>
+                    <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                        Chaque impression est réalisée avec un niveau d'exigence élevé : contrôle qualité des couches, ébavurage manuel et emballage renforcé.
+                    </p>
+
+                    <div class="mt-6 space-y-4 text-xs">
+                        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10">
+                            <i class="fa-solid fa-microchip text-brand-gold text-base mt-0.5"></i>
+                            <div>
+                                <strong class="block text-white font-bold text-sm">Haute Précision FDM</strong>
+                                <span class="text-gray-300">Impression avec précision des détails mécaniques et géométriques.</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10">
+                            <i class="fa-solid fa-arrows-spin text-brand-gold text-base mt-0.5"></i>
+                            <div>
+                                <strong class="block text-white font-bold text-sm">Tarif Dégressif Automatique</strong>
+                                <span class="text-gray-300">Plus la pièce est lourde, plus le prix au gramme diminue.</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10">
+                            <i class="fa-solid fa-box-archive text-brand-gold text-base mt-0.5"></i>
+                            <div>
+                                <strong class="block text-white font-bold text-sm">Stock permanent de filaments</strong>
+                                <span class="text-gray-300">PLA (Blanc, Vert) & PETG Résistant (Blanc, Noir).</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                    <span class="text-brand-gold font-cursive text-lg italic">Finition soignée</span>
+                    <a href="#demander-devis" class="text-brand-gold font-bold hover:underline flex items-center gap-1">
+                        Demander un devis <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: List of Detailed Services -->
+            <div class="lg:col-span-7 bg-brand-bgcard rounded-2xl p-6 sm:p-8 shadow-lg border border-brand-dark/10 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-brand-golddark"></i>
+                        Détail des services disponibles
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white border border-brand-dark/5 shadow-sm hover:border-brand-gold/50 transition-all">
+                            <div class="text-brand-golddark text-lg mb-2"><i class="fa-solid fa-print"></i></div>
+                            <h4 class="font-bold text-sm text-brand-dark">Impressions Haute Précision</h4>
+                            <p class="text-xs text-gray-600 mt-1">Directement depuis vos fichiers prêts (.STL ou .3MF). Lancement rapide.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white border border-brand-dark/5 shadow-sm hover:border-brand-gold/50 transition-all">
+                            <div class="text-brand-golddark text-lg mb-2"><i class="fa-solid fa-ruler-combined"></i></div>
+                            <h4 class="font-bold text-sm text-brand-dark">Conception & Modélisation CAO</h4>
+                            <p class="text-xs text-gray-600 mt-1">Conception de pièces géométriques, ajustements, modifications de fichiers.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white border border-brand-dark/5 shadow-sm hover:border-brand-gold/50 transition-all">
+                            <div class="text-brand-golddark text-lg mb-2"><i class="fa-solid fa-wrench"></i></div>
+                            <h4 class="font-bold text-sm text-brand-dark">Reproduction de Pièces Cassées</h4>
+                            <p class="text-xs text-gray-600 mt-1">Refabrication de composants introuvables en magasin à partir de photos et cotes.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white border border-brand-dark/5 shadow-sm hover:border-brand-gold/50 transition-all">
+                            <div class="text-brand-golddark text-lg mb-2"><i class="fa-solid fa-cubes"></i></div>
+                            <h4 class="font-bold text-sm text-brand-dark">Prototypage & Projets Sur-Mesure</h4>
+                            <p class="text-xs text-gray-600 mt-1">Développement d'objets uniques d'après vos explications claires.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 rounded-xl bg-brand-dark text-white flex items-center justify-between text-xs">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-brand-gold text-lg"></i>
+                        <span><strong>Formule transparente :</strong> Matière (Dégressif) + Temps Machine + Préparation (+ Conception si besoin)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: GRILLES TARIFAIRES & FORMULE -->
+        <div id="tarifs" class="space-y-6">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-cursive font-bold text-brand-dark">Grilles Tarifaires & Formule de Calcul</h2>
+                <p class="text-xs text-gray-600 mt-1 uppercase tracking-widest font-semibold">Une politique tarifaire transparente sans mauvaise surprise</p>
+            </div>
+
+            <!-- Formule de calcul Banner -->
+            <div class="bg-brand-dark text-white rounded-2xl p-5 shadow-xl border border-brand-gold/40 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-3 bg-brand-gold/10 rounded-xl text-brand-gold">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Formule unique appliquée à chaque devis</h3>
+                        <p class="text-sm font-semibold">Prix total de votre commande</p>
+                    </div>
+                </div>
+                <div class="bg-black/40 px-5 py-3 rounded-xl border border-white/10 font-mono text-xs sm:text-sm text-brand-goldlight font-bold text-center">
+                    Prix = Matière (Prix dégressif) + Temps Machine (1€/h) + Préparation (2€) (+ Option CAO) + Livraison LBC
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                <!-- Table 1: Materials & Degressive rate -->
+                <div class="lg:col-span-7 bg-brand-bgcard rounded-2xl p-6 shadow-md border border-brand-dark/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-base font-bold text-brand-dark flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-brand-dark text-brand-gold text-xs flex items-center justify-center font-bold">1</span>
+                                Tarifs Matériaux & Paliers Dégressifs au Poids
+                            </h3>
+                            <span class="text-[11px] bg-brand-dark text-white px-2.5 py-0.5 rounded-full font-mono">FDM</span>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs border-collapse">
+                                <thead>
+                                    <tr class="bg-brand-dark text-white uppercase tracking-wider text-[10px]">
+                                        <th class="p-2.5 rounded-l-lg">Matériau</th>
+                                        <th class="p-2.5">Poids de la Pièce</th>
+                                        <th class="p-2.5 text-right rounded-r-lg">Prix au Gramme</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 font-mono">
+                                    <tr class="hover:bg-white/50 transition-colors">
+                                        <td class="p-2.5 font-bold font-sans text-brand-dark" rowspan="3">
+                                            PLA Standard
+                                            <span class="block text-[10px] font-normal text-gray-500 font-sans">Objets déco, figurines, boîtiers</span>
+                                        </td>
+                                        <td class="p-2.5 text-gray-700">Jusqu'à 50g</td>
+                                        <td class="p-2.5 text-right font-bold text-brand-dark">0.08 € / g</td>
+                                    </tr>
+                                    <tr class="hover:bg-white/50 transition-colors bg-brand-gold/5">
+                                        <td class="p-2.5 text-gray-700">De 51g à 150g <span class="text-[10px] text-emerald-600 font-bold font-sans">(-12%)</span></td>
+                                        <td class="p-2.5 text-right font-bold text-emerald-700">0.07 € / g</td>
+                                    </tr>
+                                    <tr class="hover:bg-white/50 transition-colors bg-brand-gold/10">
+                                        <td class="p-2.5 text-gray-700">Plus de 150g <span class="text-[10px] text-emerald-600 font-bold font-sans">(-25%)</span></td>
+                                        <td class="p-2.5 text-right font-bold text-emerald-700">0.06 € / g</td>
+                                    </tr>
+                                    <tr class="hover:bg-white/50 transition-colors border-t-2 border-brand-dark/10">
+                                        <td class="p-2.5 font-bold font-sans text-brand-dark" rowspan="3">
+                                            PETG Résistant
+                                            <span class="block text-[10px] font-normal text-gray-500 font-sans">Mécanique, chaleur, extérieur</span>
+                                        </td>
+                                        <td class="p-2.5 text-gray-700">Jusqu'à 50g</td>
+                                        <td class="p-2.5 text-right font-bold text-brand-dark">0.10 € / g</td>
+                                    </tr>
+                                    <tr class="hover:bg-white/50 transition-colors bg-brand-gold/5">
+                                        <td class="p-2.5 text-gray-700">De 51g à 150g <span class="text-[10px] text-emerald-600 font-bold font-sans">(-10%)</span></td>
+                                        <td class="p-2.5 text-right font-bold text-emerald-700">0.09 € / g</td>
+                                    </tr>
+                                    <tr class="hover:bg-white/50 transition-colors bg-brand-gold/10">
+                                        <td class="p-2.5 text-gray-700">Plus de 150g <span class="text-[10px] text-emerald-600 font-bold font-sans">(-20%)</span></td>
+                                        <td class="p-2.5 text-right font-bold text-emerald-700">0.08 € / g</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Couleurs en stock -->
+                    <div class="mt-4 pt-3 border-t border-brand-dark/10 bg-white/70 p-3 rounded-xl">
+                        <h4 class="text-xs font-bold text-brand-dark uppercase tracking-wide flex items-center gap-1.5 mb-1.5">
+                            <i class="fa-solid fa-palette text-brand-golddark"></i> Couleurs disponibles en stock :
+                        </h4>
+                        <div class="flex flex-wrap gap-4 text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-semibold text-gray-700">PLA :</span>
+                                <span class="px-2 py-0.5 rounded bg-gray-100 border text-gray-800 text-[11px] font-medium">Blanc</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 text-[11px] font-medium">Vert</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-semibold text-gray-700">PETG :</span>
+                                <span class="px-2 py-0.5 rounded bg-gray-100 border text-gray-800 text-[11px] font-medium">Blanc</span>
+                                <span class="px-2 py-0.5 rounded bg-gray-800 text-white text-[11px] font-medium">Noir</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table 2: CAO Options & Pricing Examples -->
+                <div class="lg:col-span-5 bg-brand-bgcard rounded-2xl p-6 shadow-md border border-brand-dark/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-base font-bold text-brand-dark flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-brand-dark text-brand-gold text-xs flex items-center justify-center font-bold">2</span>
+                                Options Conception & Modélisation CAO
+                            </h3>
+                            <span class="text-[11px] bg-brand-gold text-brand-dark px-2.5 py-0.5 rounded-full font-bold">Forfait fixe</span>
+                        </div>
+
+                        <div class="overflow-x-auto mb-4">
+                            <table class="w-full text-left text-xs border-collapse">
+                                <thead>
+                                    <tr class="bg-brand-dark text-white uppercase tracking-wider text-[10px]">
+                                        <th class="p-2 rounded-l-lg">Prestation</th>
+                                        <th class="p-2">Description</th>
+                                        <th class="p-2 text-right rounded-r-lg">Tarif CAO</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="p-2 font-bold text-brand-dark">Fichier 3D Fourni</td>
+                                        <td class="p-2 text-gray-600">Impression directe de votre .STL / .3MF</td>
+                                        <td class="p-2 text-right font-mono font-bold text-emerald-600">0.00 € (Inclus)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 font-bold text-brand-dark">Recherche de Modèle</td>
+                                        <td class="p-2 text-gray-600">Recherche & validation d'un modèle 3D existant</td>
+                                        <td class="p-2 text-right font-mono font-bold text-brand-dark">3.00 €</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 font-bold text-brand-dark">Modélisation Simple</td>
+                                        <td class="p-2 text-gray-600">D'après vos photos & mesures précises</td>
+                                        <td class="p-2 text-right font-mono font-bold text-brand-dark">10.00 €</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 font-bold text-brand-dark">Modélisation Sur-Mesure</td>
+                                        <td class="p-2 text-gray-600">Pièce complexe ou création de A à Z</td>
+                                        <td class="p-2 text-right font-mono font-bold text-brand-dark">Sur devis (dès 15€)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Concrete Example Box -->
+                    <div class="bg-brand-dark text-white p-4 rounded-xl border border-brand-gold/30 space-y-1.5">
+                        <div class="text-xs font-bold text-brand-gold flex items-center gap-1.5">
+                            <i class="fa-solid fa-lightbulb"></i> Exemple concret pour une pièce de 50g en PLA (4h) :
+                        </div>
+                        <p class="text-[11px] text-gray-300 font-mono leading-relaxed">
+                            • Matière PLA (50g x 0.08€) = <strong class="text-white">4.00 €</strong><br>
+                            • Temps machine (4h x 1.00€) = <strong class="text-white">4.00 €</strong><br>
+                            • Forfait Préparation & Réglages = <strong class="text-white">2.00 €</strong><br>
+                            <span class="text-brand-gold font-bold text-xs mt-1 block font-sans">PRIX TOTAL = 10.00 € <span class="font-normal text-gray-400 text-[10px]">(Hors port Leboncoin)</span></span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- MODALITÉS DE LIVRAISON BANNER -->
+        <div class="bg-brand-dark text-white rounded-2xl p-6 shadow-xl border border-brand-gold/30">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-brand-gold mb-4 text-center sm:text-left">
+                <i class="fa-solid fa-truck-fast mr-2"></i> Engagements & Livraison
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+                <div class="flex items-start gap-3 bg-white/5 p-3.5 rounded-xl border border-white/5">
+                    <i class="fa-solid fa-shield-halved text-brand-gold text-lg mt-0.5"></i>
+                    <div>
+                        <strong class="block text-white">Paiement Sécurisé</strong>
+                        <span class="text-gray-300">Transaction protégée à 100% via Leboncoin</span>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 bg-white/5 p-3.5 rounded-xl border border-white/5">
+                    <i class="fa-solid fa-box text-brand-gold text-lg mt-0.5"></i>
+                    <div>
+                        <strong class="block text-white">Choix du Transporteur</strong>
+                        <span class="text-gray-300">Mondial Relay, Colissimo ou Shop2Shop</span>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 bg-white/5 p-3.5 rounded-xl border border-white/5">
+                    <i class="fa-solid fa-lock text-brand-gold text-lg mt-0.5"></i>
+                    <div>
+                        <strong class="block text-white">Colis Blindé Anti-Chocs</strong>
+                        <span class="text-gray-300">Emballage renforcé sous film bulle résistant</span>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 bg-white/5 p-3.5 rounded-xl border border-white/5">
+                    <i class="fa-solid fa-clock text-brand-gold text-lg mt-0.5"></i>
+                    <div>
+                        <strong class="block text-white">Envoi Express</strong>
+                        <span class="text-gray-300">Expédié sous 24h à 48h après fabrication</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white border-t border-brand-gold/30 mt-16 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded border border-brand-gold flex items-center justify-center text-brand-gold font-bold">3D</div>
+                <div>
+                    <p class="font-bold text-white">STRATE — Atelier Impression 3D</p>
+                    <p class="text-[10px]">Contact e-mail direct : boitardclement28@gmail.com</p>
+                </div>
+            </div>
+            <div class="text-center md:text-right">
+                <p>© 2026 STRATE Atelier Impression 3D. Tous droits réservés.</p>
+                <p class="text-[10px] text-gray-500">Transactions sécurisées garanties via Leboncoin.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const EMAIL_CONTACT = 'boitardclement28@gmail.com';
+
+        // Copy email helper
+        function copyEmailAddress() {
+            // Standard execCommand copy for iframe compatibility
+            const tempInput = document.createElement('input');
+            tempInput.value = EMAIL_CONTACT;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const btnText = document.getElementById('copyBtnText');
+            const btnIcon = document.getElementById('copyBtnIcon');
+            
+            btnText.innerText = 'E-mail copié !';
+            btnIcon.className = 'fa-solid fa-check text-emerald-400';
+            
+            setTimeout(() => {
+                btnText.innerText = "Copier l'e-mail";
+                btnIcon.className = 'fa-solid fa-copy';
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
